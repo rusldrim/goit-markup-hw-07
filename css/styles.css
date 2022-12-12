@@ -198,7 +198,7 @@ img {
 
     background-color: var(--hat-background-color);
 }
-.hat-title {
+.hat__title {
     
     width: 696px;
     margin-left: auto;
@@ -216,7 +216,7 @@ img {
     
 }
 
-.hat-text {
+.hat__text {
     
     padding: 10px 32px;
     min-width: 216px;
@@ -238,40 +238,52 @@ img {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hat-text:hover,
-.hat-text:focus {
+.hat__text:hover,
+.hat__text:focus {
     background-color: var(--accent-background-color);
 } 
 /* Особливості */
-.visually-hidden {
-    position: absolute;
-        white-space: nowrap;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        border: 0;
-        padding: 0;
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        margin: -1px;
-}
-.trait {
+
+.features {
     padding-top: 94px;
     padding-bottom: 94px;
 }
+
+.features__container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1200px;
+    outline: 2px solid tomato;
+}
+
+.features__visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
 /* Флекс Особливості */
-.features {
+.features__block {
     display: flex;
 }
 
-.item {
+.features__item {
     width: calc((100% - 3 * 30px) / 4);
 }
 
-.features .item+.item {
+.features .features__item+.features__item {
     margin-left: 30px;
 }
-.pic {
+.features__icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -281,14 +293,7 @@ img {
     background-color: var(--team-background-color);     
 }
 
-.i-item+.i-item {
-    margin-left: 30px;
-}
-
-.i-item {
-    width: calc((100% - 3 * 30px) / 4);
-}
-.features-title {
+.features__title {
     margin-top: 0;
     margin-bottom: 10px;
 
@@ -299,7 +304,7 @@ img {
     text-transform: uppercase;
 }
 
-.features-text {
+.features__text {
     margin-top: 0;
     margin-bottom: 0;
 
@@ -312,22 +317,46 @@ img {
 
 /* Чим ми займаємось */
 /* Флекс */
-.we-do {
+.work {
     padding-bottom: 94px;
 }
-.work {
+
+.work__container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1200px;
+    outline: 2px solid tomato;
+}
+.work__title {
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.work__block {
     display: flex;
 }
 
-.work>.item {
+.work__block>.work__item {
     width: calc((100% - 2 * 30px) / 3);
 }
 
-.work .item+.item {
+.work__block .work__item+.work__item {
     margin-left: 30px;
 }
 
-.work-text {
+.work__thumb {
+    position: relative;
+}
+
+.work__text {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -346,24 +375,11 @@ img {
     position: absolute;
     bottom: 0;
 }
-.work-thumb {
-    position: relative;
-}
 
-.paragraf {
+.work__note {
     margin: 0;
 }
 
-.title, .title-do {
-    margin-top: 0;
-    margin-bottom: 50px;
-
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.16;
-    letter-spacing: 0.03em;
-    text-align: center;
-}
 
 /* Команда */
 /* Флекс */
@@ -1135,7 +1151,7 @@ textarea:focus {
 
     font-weight: 700;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 1.87;
     letter-spacing: 0.06em;
     cursor: pointer;
     border: none;
