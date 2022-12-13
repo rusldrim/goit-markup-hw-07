@@ -45,7 +45,7 @@ img {
     padding-left: 15px;
     padding-right: 15px;
     width: 1200px;
-    outline: 2px solid tomato;
+    /* outline: 2px solid tomato; */
 }
 
 /* Колір основного тексту #212121*/
@@ -385,7 +385,6 @@ img {
 
 .team__roster {
     display: flex;
-   
 }
 
 .team__roster .team__item+.team__item {
