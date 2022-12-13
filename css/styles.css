@@ -4,24 +4,58 @@ body {
     font-family: Roboto, sans-serif;  
 }
 
+header {
+    border-bottom: 1px solid var(--border-header-color);
+}
+
+footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--secondary-background-color);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 .list {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-header {
-    border-bottom: 1px solid var(--border-header-color);
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
 }
 
-/*  */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1200px;
+    outline: 2px solid tomato;
+}
+
 /* Колір основного тексту #212121*/
 /* Другорядний колір тексту #757575*/
 /* Основний колір фону #FFFFFF*/
 /* Другорядний колір фону #2F303A*/
 /* Акцент #2196F3* / 
-/*  */
 
+
+/*  */
 :root {
     --primary-text-color: #212121;
     --text-color: #757575;
@@ -42,31 +76,17 @@ header {
     --social-background-color: rgba(255, 255, 255, 0.1);
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 1200px;
-    /* outline: 2px solid tomato; */
-}
-
 /* HEADER-ЗАГОЛОВОК */
 /* Флекс для всього футера */
-.ln {
+
+.navigation {
     display: flex;
     align-items: center;
 }
 
 /* ЛОГОТИП */
 
-.logo{
+.navigation__logo{
     display: block;
     padding-top: 24px;
     padding-bottom: 25px;
@@ -80,22 +100,23 @@ img {
     letter-spacing: 0.03em;
     text-decoration: none
 }
-.black {
+
+.navigation__logoblack {
     color: var(--logo-color);
 }
 
 /* НАВІГАЦІЯ */
 /* Флекс для навігації */
-.site-nav {
+.navigation__site {
     display: flex;
     margin-left: 93px;
 }
 
-.site-nav .nav-item:not(:last-child) {
+.navigation__site .navigation__item:not(:last-child) {
     margin-right: 50px;
 }
 
-.site-nav .link {
+.navigation__link {
     
     display: block;
     padding-top: 32px;
@@ -112,42 +133,37 @@ img {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);   
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
-    color: var(--accent-color);
-    
+.navigation__link:hover,
+.navigation__link:focus {
+    color: var(--accent-color);  
 }
-.site-nav .link.current,
-.contacts .link.current,
-.contacts .link:hover,
-.contacts .link:focus {
+.navigation__link--active {
     color: var(--accent-color);
 }
 
-.current::after {
+.navigation__link--active::after {
     content: '';
     position: relative;
     bottom: -33px;
     display: block;
     height: 4px;
     border-radius: 2px;
-    
-    background-color: var(--accent-color);   
+   
+    background-color: var(--accent-color);
 }
-
 
 /* КОНТАКТИ */
 /* Флекс на контакти */
 .contacts {
     display: flex;
     margin-left: auto;
-    /* align-items: center; */
 }
-.contacts .c-item + .c-item {
+
+.contacts .contacts__item + .contacts__item {
     margin-left: 50px;
 }
 
-.contacts .link {
+.contacts__link {
     display: flex;
     align-items: center;
     padding-top: 32px;
@@ -164,23 +180,21 @@ img {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pictures {
-    display: flex;
-    align-items: center;
+.contacts__link:hover,
+.contacts__link:focus {
+    color: var(--accent-color);
 }
 
-.pictures-icon {
+.contacts__icon {
     margin-right: 10px;
 
     fill: currentColor;
 }
 
-
 /* MAIN */
 /* ШАПКА */
 
 .hat {
-    
     max-width: 1600px;
         margin-left: auto;
         margin-right: auto;
@@ -205,19 +219,16 @@ img {
     margin-right: auto;
     margin-top: 0;
     
-
     color: var(--hat-text-color);
 
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
-    
+    text-transform: uppercase;   
 }
 
-.hat__text {
-    
+.hat__button {  
     padding: 10px 32px;
     min-width: 216px;
     border: none;
@@ -249,27 +260,6 @@ img {
     padding-bottom: 94px;
 }
 
-.features__container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 1200px;
-    outline: 2px solid tomato;
-}
-
-.features__visually-hidden {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
-}
 
 /* Флекс Особливості */
 .features__block {
@@ -321,14 +311,6 @@ img {
     padding-bottom: 94px;
 }
 
-.work__container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 1200px;
-    outline: 2px solid tomato;
-}
 .work__title {
     margin-top: 0;
     margin-bottom: 50px;
@@ -388,15 +370,6 @@ img {
     padding-bottom: 94px;
 
     background-color: var(--team-background-color);
-}
-
-.team__container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 1200px;
-    outline: 2px solid tomato;
 }
 
 .team__title {
@@ -498,21 +471,10 @@ img {
     fill: var(--hat-text-color);
 }
 
-
-
 /* Постійні клієнти */
 .customers {
     padding-top: 94px;
     padding-bottom: 94px;
-}
-
-.customers__container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 1200px;
-    outline: 2px solid tomato;
 }
 
 .customers__title {
@@ -568,28 +530,6 @@ img {
 .portfolio {
     padding-top: 94px;
     padding-bottom: 94px;
-}
-
-.portfolio__container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 1200px;
-    outline: 2px solid tomato;
-}
-
-.portfolio__visually-hidden {
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
 }
 
 .portfolio__filters {
@@ -739,14 +679,18 @@ img {
 }
 
 /* ПІДВАЛ */
-
-.bg {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: var(--secondary-background-color);
+/* Адреса */
+.footer-box {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
 }
 
-.bg-logo {
+.footer-address {
+    margin-right: 70px;
+}
+
+.footer-address__logo {
     display: block;
     margin-bottom: 20px;
     padding: 0;
@@ -761,11 +705,23 @@ img {
     text-decoration: none
 }
 
-.white {
+.footer-address__logo--inverse {
     color: var(--secondary-logo-color);
 }
 
-.bg-title {
+.footer-address__roster {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-address__item {
+    padding: 0;
+    margin-bottom: 9px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.footer-address__title {
     margin: 0;
     padding: 0;
 
@@ -777,26 +733,29 @@ img {
     font-style: normal;
 }
 
-.bg-link {
-
-    color: var(--contacts-color);
-
+.footer-address__link {
     font-style: normal;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
     text-decoration: none;
 
+    color: var(--contacts-color);
+
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.bg-link:hover,
-.bg-link:focus {
+.footer-address__link:hover,
+.footer-address__link:focus {
     color: var(--accent-color);
 }
 
+/* Соціальні мережі */
+.footer-social {
+    margin-right: 93px;
+}
 
-.social-text {
+.footer-social__text {
     margin-top: 0;
     margin-right: 0;
     margin-left: 0;
@@ -811,75 +770,36 @@ img {
     color: var(--hat-text-color);
 }
 
-.join {
+.footer-social__roster {
     display: flex;
     align-items: center;
 }
 
-.join>.join-item+.join-item {
+.footer-social__roster>.footer-social__item+.footer-social__item {
     margin-left: 10px;
 }
 
-.join-link {
+.footer-social__link {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: var(--social-background-color);
-
     width: 44px;
     height: 44px;
-    border-radius: 50%;  
+    border-radius: 50%;
+
+    background-color: var(--social-background-color);   
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.join-link:hover,
-.join-link:focus {
+.footer-social__link:hover,
+.footer-social__link:focus {
     background-color: var(--accent-color);
 }
 
-.con {
-    display: flex;
-    flex-direction: column;
-}
-
-.con-item {
-    padding: 0;
-    margin-bottom: 9px;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.address-box {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-}
-
-.address-item {
-    margin-right: 70px;
-
-}
-
-.social {
-    margin-right: 93px;
-}
-
 /* Підписатися */
-.mail-text {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    margin: 0;
-    margin-bottom: 20px;
 
-    color: var(--hat-text-color);
-}
-
-.form-mail input {
+.footer-mail input {
 
     padding-top: 15px;
     padding-left: 16px;
@@ -893,7 +813,7 @@ img {
     background-color: var(--secondary-background-color);
 }
 
-.form-mail input::placeholder {
+.footer-mail input::placeholder {
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: 0.03em;
@@ -902,7 +822,23 @@ img {
     color: var(--contacts-color);
 }
 
-.sign {
+.footer-mail__text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 20px;
+
+    color: var(--hat-text-color);
+}
+
+.footer-mail__sign {
+    display: flex;
+}
+
+.footer-mail__button {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -913,7 +849,6 @@ img {
     padding: 10px 28px;
     min-width: 200px;
 
-
     border-radius: 4px;
     border: none;
     cursor: pointer;
@@ -921,10 +856,6 @@ img {
     color: var(--hat-text-color);
     background-color: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
-
-.sign-up {
-    display: flex;
 }
 
 /* Модальне вікно */
@@ -935,7 +866,6 @@ img {
     width: 100%;
     height: 100%;
    
-
     background-color: rgba(0, 0, 0, 0.2);
 
     opacity: 1;
@@ -955,8 +885,6 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
-    
-
     width: 528px;
     height: 581px;
 
@@ -968,8 +896,28 @@ img {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 /* Розмітка модального вікна */
-.modal-title {
 
+.modal__button {
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    top: 8px;
+    right: 8px;
+    padding: 6px;
+    border-radius: 50%;
+
+    background-color: var(--hat-text-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__button:hover,
+.modal__button:focus {
+    fill: var(--accent-color);
+}
+
+.modal__title {
     font-weight: 700;
     font-size: 20px;
     line-height: 1.15;
@@ -981,40 +929,27 @@ img {
     margin-bottom: 12px;
 }
 
-.close {
-    display: flex;
-    position: absolute;
-    cursor: pointer;
-    top: 8px;
-    right: 8px;
-    padding: 6px;
-    border-radius: 50%;
-    
-    background-color: var(--hat-text-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.close:hover,
-.close:focus {
-    fill: var(--accent-color);
-}
-
-.form {
-    width: 528px;
-   
+.modal__form {
+    width: 528px; 
     padding-left: 40px;
-    padding-right: 40px;
-    
+    padding-right: 40px;   
 }
 
-.form-field {
+.modal__field {
     position: relative;
     margin-bottom: 10px;
 }
 
-.form-input {
+.modal__label {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    display: block;
+
+    color: var(--text-color);
+}
+
+.modal__input {
     width: 100%;
     padding-top: 10px;
     padding-left: 42px;
@@ -1028,23 +963,12 @@ img {
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:hover,
-.form-input:focus {
-    border: 1px solid var(--accent-color);
-    
+.modal__input:hover,
+.modal__input:focus {
+    border: 1px solid var(--accent-color);  
 }
 
-
-.form-label {
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
-    display: block;
-        
-    color: var(--text-color);   
-}
-
-.form-icon {
+.modal__icon {
     position: absolute;
     top: 10px;
     left: 12px;
@@ -1053,14 +977,14 @@ img {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus + .form-icon {
+.modal__input:focus + .modal__icon {
     fill: var(--accent-color);
 }
-.form-input:hover +.form-icon {
+.modal__input:hover +.modal__icon {
     fill: var(--accent-color);
 }
 
-.form-textarea {
+.modal__textarea {
     position: relative;
     margin-bottom: 20px;
 }
@@ -1087,7 +1011,7 @@ textarea:focus {
     border: 1px solid var(--accent-color);
 }
 
-.form-textarea textarea::placeholder {
+.modal__textarea textarea::placeholder {
 
     font-size: 12px;
     line-height: 1.16;
@@ -1097,19 +1021,15 @@ textarea:focus {
 }
 
 /* Розмітка чекбоксу */
-.check {
+.modal-checkbox {
     position: relative;
     display: flex; 
     justify-content: flex-end;
-    margin-bottom: 30px;
-    
-   
-    width: 425px;
-    
+    margin-bottom: 30px; 
+    width: 425px;   
 }
 
-.checkbox-label {
-    
+.modal-checkbox__label {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -1118,13 +1038,12 @@ textarea:focus {
     color: var(--text-color);
 }
 
-.checkbox {
+.modal-checkbox__input {
     appearance: none;
-    position: absolute;
-    
+    position: absolute;  
 }
 
-.checkbox-icon {
+.modal-checkbox__icon {
     position: absolute;
     top: 0;
     left: 20px;
@@ -1138,17 +1057,16 @@ textarea:focus {
     border: 2px solid var(--primary-text-color);
     border-radius: 4px;
 
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
-.checkbox:checked + .checkbox-icon {
+.modal-checkbox__input:checked + .modal-checkbox__icon {
     border-color: var(--accent-color);
     background-color: var(--accent-color);
 }
 
 
-.text-decor {
+.modal-checkbox__text {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -1158,12 +1076,11 @@ textarea:focus {
 }
 
 /* Кнопка-відправити */
-.send {
+.modal__send {
     position: absolute;
     left: 0;
     bottom: 0;
     transform: translate(164px, -40px);
-  
 
     font-weight: 700;
     font-size: 16px;
@@ -1173,7 +1090,6 @@ textarea:focus {
     border: none;
     padding: 10px 52px;
     margin: 0;
-    
     
     color: var(--hat-text-color);
     background: var(--accent-background-color);
