@@ -1,0 +1,108 @@
+.portfolio-project {
+    @extend %list;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $card-set-gap;
+}
+
+.portfolio-project__item {
+    flex-basis: calc((100% - 2 * $card-set-gap)) / 3;
+}
+
+.portfolio-project__link {
+    display: block;
+    text-decoration: none;
+
+    color: $primary-text-color;
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-project__link:hover,
+.portfolio-project__link:focus {
+    box-shadow: $card-shadow;
+}
+
+// Оверлей
+.portfolio-project__card {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-project__card::before {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(33, 150, 243, 0.9);
+
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-project__card:hover::before {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.portfolio-project__card:hover .portfolio-project__overlay {
+    display: block;
+}
+
+.portfolio-project__overlay {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+
+    color: $hat-text-color;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-project__overlay:hover {
+    opacity: 1;
+}
+
+.portfolio-project__content {
+    padding: 20px 24px;
+    background: $hat-text-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+}
+
+.portfolio-project__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2.0;
+    letter-spacing: 0.06em;
+}
+
+.portfolio-project__text {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.03em;
+
+    color: $text-color;    
+}
