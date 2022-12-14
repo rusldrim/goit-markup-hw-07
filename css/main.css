@@ -869,9 +869,10 @@ img {
   opacity: 0;
   pointer-events: none;
 }
-.backdrop.is-hidden.modal {
-  -webkit-transform: translate(-50%, -50%) scale(1.1);
-          transform: translate(-50%, -50%) scale(1.1);
+
+.backdrop.is-hidden .modal {
+  -webkit-transform: translate(-50%, -50%) scale(1.5);
+          transform: translate(-50%, -50%) scale(1.5);
 }
 
 .modal {
