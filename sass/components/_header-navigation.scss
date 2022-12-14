@@ -47,21 +47,25 @@
     text-decoration: none;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
 }
-.navigation__link:hover,
-.navigation__link:focus {
-    color: $accent-color;
-}
+
 .navigation__link--active {
     color: $accent-color;
+    
+    &::after {
+        content: '';
+        position: relative;
+        bottom: -33px;
+        display: block;
+        height: 4px;
+        border-radius: 2px;
+    
+        background-color: $accent-color;
+    }
 }
-.navigation__link--active::after {
-    content: '';
-    position: relative;
-    bottom: -33px;
-    display: block;
-    height: 4px;
-    border-radius: 2px;
 
-    background-color: $accent-color;
-}
